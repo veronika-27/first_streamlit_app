@@ -28,3 +28,6 @@ streamlit.header('Fruityvice Fruit Advice!')
 # New section to display Fruityvice API response 
 fruityvice_response = requests.get("https://www.fruityvice.com/api/fruit/watermelon")
 streamlit.text(fruityvice_response.json())
+# Norm. the json before display it in DF
+fruityvice_norm = pandas.json_normalize(fruityvice_response.json())
+stramlit.dataframe(fruityvice_norm)
