@@ -23,10 +23,12 @@ fruits_to_show = my_fruit_list.loc[selected_fruits]
                       
 streamlit.dataframe(fruits_to_show)
 
+# New section to display Fruityvice API response 
 streamlit.header('Fruityvice Fruit Advice!')
 
-# New section to display Fruityvice API response 
-fruityvice_response = requests.get("https://www.fruityvice.com/api/fruit/" + "kiwi")
+selected_fruit = streamlit.text_input('What fruit would you like informaiton about?', 'kiwi')
+streamlit.write("The user selection is: ", selected_fruit)
+fruityvice_response = requests.get("https://www.fruityvice.com/api/fruit/" + selected_fruit)
 #streamlit.text(fruityvice_response.json())
 
 # Norm. the json before display it in DF
