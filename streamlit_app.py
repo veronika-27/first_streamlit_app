@@ -1,3 +1,3 @@
-creating the main.py file 
+import streamlit 
 
-python -m pip install protobuf==3.19.0
+streamlit.title('My Parents New Healthy Diner') 
