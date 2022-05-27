@@ -30,4 +30,4 @@ fruityvice_response = requests.get("https://www.fruityvice.com/api/fruit/waterme
 streamlit.text(fruityvice_response.json())
 # Norm. the json before display it in DF
 fruityvice_norm = pandas.json_normalize(fruityvice_response.json())
-stramlit.dataframe(fruityvice_norm)
+streamlit.dataframe(fruityvice_norm)
